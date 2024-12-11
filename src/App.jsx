@@ -13,12 +13,10 @@ function App() {
             <Greeting></Greeting>
             <Card></Card>
             <Info></Info>
-            {isHomepage() ? (
+            {isHomepage() && (
                 <span className="homepage">
                     This text is conditionally rendered on homepage.
                 </span>
-            ) : (
-                ''
             )}
         </>
     );
