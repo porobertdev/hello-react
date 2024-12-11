@@ -6,6 +6,9 @@ function Header() {
         // use fragment to return multiple root elements
         <>
             <Navbar items={['Home', 'Projects', 'Contact', 'About']} />
+
+            {/* this navbar doesn't render because items is empty */}
+            <Navbar items={[]} />
             <HeroImage />
         </>
     );
