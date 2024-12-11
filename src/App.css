@@ -57,7 +57,10 @@ nav {
         padding: 0.5rem 1rem;
         background-color: #f9f9f9;
         border-radius: 6px;
-        cursor: pointer;
+
+        a {
+            cursor: pointer;
+        }
 
         &:hover {
             background-color: #535bf2;
