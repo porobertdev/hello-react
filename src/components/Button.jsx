@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 const variants = {
     s: {
         fontSize: '0.3rem',
@@ -15,14 +13,15 @@ const variants = {
     },
 };
 
-function Button({ size }) {
-    const [count, setCount] = useState(0);
+function Button({ size, text, clickHandler, style }) {
+    const styles = {
+        ...variants[size],
+        ...style,
+    };
+
     return (
-        <button
-            style={variants[size]}
-            onClick={() => setCount((count) => count + 1)}
-        >
-            count is {count}
+        <button style={styles} onClick={clickHandler}>
+            {text}
         </button>
     );
 }
