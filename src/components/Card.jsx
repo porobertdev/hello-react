@@ -3,7 +3,7 @@ import Button from './Button';
 function Card() {
     return (
         <div className="card">
-            <Button></Button>
+            <Button size={'l'}></Button>
             <p>
                 Edit <code>src/App.jsx</code> and save to test HMR
             </p>
