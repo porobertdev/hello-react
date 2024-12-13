@@ -75,3 +75,28 @@ span.homepage {
     color: #888;
     font-size: 0.8rem;
 }
+
+/* TOOLTIP */
+h1 {
+    user-select: none;
+}
+
+div.tooltip {
+    width: max-content;
+
+    position: relative;
+    top: 10px;
+    left: 35%;
+    background-color: #f9f9f9;
+    /* color: white; */
+    border-radius: 6px;
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+}
+
+/* reset default shit */
+input {
+    border: none;
+    appearance: none;
+    outline: none;
+}
