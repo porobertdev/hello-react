@@ -3,7 +3,7 @@ import Greeting from './components/Greeting';
 import Card from './components/Card';
 import Info from './components/Info';
 import isHomepage from './utils/isHomepage';
-import { ThemeContext } from './contexts';
+import { ThemeContext, TitleContext } from './contexts';
 import './App.css';
 import { useState } from 'react';
 import Toggle from './components/Toggle';
@@ -13,6 +13,8 @@ function App() {
     const [theme, setTheme] = useState('light');
     const styles = getTheme(theme);
 
+    const [titleCount, setTitleCount] = useState(0);
+
     const clickHandler = () => {
         setTheme(theme === 'light' ? 'dark' : 'light');
     };
@@ -20,8 +22,16 @@ function App() {
     return (
         <ThemeContext.Provider value={styles}>
             <Header></Header>
-            <Greeting></Greeting>
-            <Card></Card>
+            <Greeting
+                titleHandler={(e) => {
+                    if (e.key === 'Enter') setTitleCount(titleCount + 1);
+                }}
+            ></Greeting>
+
+            <TitleContext.Provider value={titleCount}>
+                <Card></Card>
+            </TitleContext.Provider>
+
             <Toggle onClick={clickHandler} />
             <Info></Info>
             {isHomepage() && (

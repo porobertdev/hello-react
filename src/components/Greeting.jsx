@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Tooltip from './Tooltip';
 import Input from './Input';
 
-function Greeting() {
+function Greeting({ titleHandler }) {
     const [newTitle, setNewTitle] = useState('Greeting from Vite + React :)');
     const [hovered, setHovered] = useState(false);
     const [editing, setEditing] = useState(false);
@@ -21,6 +21,7 @@ function Greeting() {
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
             onDoubleClick={() => setEditing(true)}
+            onKeyUp={titleHandler}
         >
             {editing ? (
                 <Input
