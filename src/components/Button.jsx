@@ -1,3 +1,6 @@
+import { useContext } from 'react';
+import { ThemeContext } from '../contexts';
+
 const variants = {
     s: {
         fontSize: '0.3rem',
@@ -17,6 +20,7 @@ function Button({ size, text, clickHandler, style }) {
     const styles = {
         ...variants[size],
         ...style,
+        ...useContext(ThemeContext),
     };
 
     return (

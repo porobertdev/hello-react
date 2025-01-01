@@ -1,5 +1,7 @@
+import { useContext } from 'react';
 import { HeroImage } from './Hero';
 import Navbar from './Navbar';
+import { ThemeContext } from '../contexts';
 
 function Header() {
     return (
